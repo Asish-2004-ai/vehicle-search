@@ -34,7 +34,7 @@ export default function SearchAndBook() {
       setMessage('');
       setError('');
     } catch (err) {
-      setError('Error fetching vehicles');
+      setError('Error');
     }
   };
 
@@ -45,12 +45,12 @@ export default function SearchAndBook() {
         fromPincode: form.fromPincode,
         toPincode: form.toPincode,
         startTime: form.startTime,
-        customerId: 'demo123'
+        customerId: 'asish123'
       });
-      setMessage('Booking successful!');
+      setMessage('Booking successful');
       setError('');
     } catch (err) {
-      setError('Booking failed — maybe already booked.');
+      setError('Booking failed.');
     }
   };
 

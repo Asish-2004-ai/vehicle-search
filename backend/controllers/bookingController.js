@@ -20,7 +20,7 @@ exports.createBooking = async (req, res) => {
     });
 
     if (conflict) {
-      return res.status(409).json({ message: 'Vehicle already booked in this time slot' });
+      return res.status(409).json({ message: 'Vehicle already booked' });
     }
 
     const booking = new Booking({

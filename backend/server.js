@@ -13,7 +13,6 @@ app.use(express.json());
 app.use('/api/vehicles', vehicleRoutes);
 app.use('/api/bookings', bookingRoutes);
 
-// Only connect and listen if NOT in test mode
 if (process.env.NODE_ENV !== 'test') {
   mongoose.connect(process.env.MONGO_URI)
     .then(() => {

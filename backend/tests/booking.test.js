@@ -7,7 +7,7 @@ const Booking = require('../models/Booking');
 let vehicleId;
 
 beforeAll(async () => {
-  await mongoose.connect(process.env.MONGO_URI, { dbName: 'test-db' });
+  await mongoose.connect(process.env.MONGO_URI, { dbName: 'vehicleBooking' });
   await Vehicle.deleteMany();
   await Booking.deleteMany();
 
@@ -21,7 +21,7 @@ afterAll(async () => {
 });
 
 describe('POST /api/bookings', () => {
-  it('should create a booking if no conflict', async () => {
+  it('if no issue create a booking', async () => {
     const res = await request(app).post('/api/bookings').send({
       vehicleId,
       fromPincode: '123456',
@@ -34,12 +34,12 @@ describe('POST /api/bookings', () => {
     expect(res.body.vehicleId).toBe(vehicleId.toString());
   });
 
-  it('should reject overlapping booking', async () => {
+  it('reject booking', async () => {
     const res = await request(app).post('/api/bookings').send({
       vehicleId,
       fromPincode: '123456',
       toPincode: '123460',
-      startTime: '2025-06-25T10:30:00Z', // overlaps
+      startTime: '2025-06-25T10:30:00Z',
       customerId: 'cust2',
     });
 

@@ -7,7 +7,9 @@ function App() {
   return (
     <Router>
       <nav>
-        <Link to="/">Add Vehicle</Link> | <Link to="/search">Search & Book</Link> |  <Link to="/my-bookings">My Bookings</Link>
+        <Link to="/">Add Vehicle</Link>
+        <Link to="/search">Search & Book</Link>
+         <Link to="/my-bookings">My Bookings</Link>
       </nav>
       <Routes>
         <Route path="/" element={<AddVehiclePage />} />

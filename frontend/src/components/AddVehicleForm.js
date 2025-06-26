@@ -25,10 +25,10 @@ export default function AddVehicleForm() {
 
     try {
       await API.post('/vehicles', form);
-      setMessage('Vehicle added successfully!');
+      setMessage('Vehicle added successfully');
       setForm({ name: '', capacityKg: '', tyres: '' });
     } catch (err) {
-      setMessage('Error adding vehicle');
+      setMessage('Error');
       setError(true);
     }
   };

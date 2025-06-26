@@ -23,7 +23,7 @@ exports.getAvailableVehicles = async (req, res) => {
     const { capacityRequired, fromPincode, toPincode, startTime } = req.query;
 
     if (!capacityRequired || !fromPincode || !toPincode || !startTime) {
-      return res.status(400).json({ message: 'Missing query parameters' });
+      return res.status(400).json({ message: 'Missing query' });
     }
 
     const start = new Date(startTime);

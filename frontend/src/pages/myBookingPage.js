@@ -24,7 +24,7 @@ export default function MyBookingsPage() {
       const res = await API.get('/bookings');
       setBookings(res.data);
     } catch (err) {
-      setMessage('Failed to load bookings.');
+      setMessage('Failed');
       setAlertType('error');
       setOpenSnackbar(true);
     } finally {
@@ -40,7 +40,7 @@ export default function MyBookingsPage() {
       setAlertType('success');
       setOpenSnackbar(true);
     } catch (err) {
-      setMessage('Error cancelling booking.');
+      setMessage('Error');
       setAlertType('error');
       setOpenSnackbar(true);
     }

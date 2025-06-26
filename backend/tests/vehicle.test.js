@@ -1,10 +1,10 @@
 const request = require('supertest');
-const app = require('../server'); // Export your express app from server.js
+const app = require('../server');
 const mongoose = require('mongoose');
 const Vehicle = require('../models/Vehicle');
 
 beforeAll(async () => {
-  await mongoose.connect(process.env.MONGO_URI, { dbName: 'test-db' });
+  await mongoose.connect(process.env.MONGO_URI, { dbName: 'vehicleBooking' });
 });
 
 afterAll(async () => {
@@ -13,7 +13,7 @@ afterAll(async () => {
 });
 
 describe('POST /api/vehicles', () => {
-  it('should create a new vehicle', async () => {
+  it('create a new vehicle', async () => {
     const res = await request(app).post('/api/vehicles').send({
       name: 'Tata Ace',
       capacityKg: 800,
@@ -25,7 +25,7 @@ describe('POST /api/vehicles', () => {
     expect(res.body.name).toBe('Tata Ace');
   });
 
-  it('should reject if fields are missing', async () => {
+  it('reject', async () => {
     const res = await request(app).post('/api/vehicles').send({
       name: 'Test',
     });
