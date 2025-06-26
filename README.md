@@ -2,7 +2,7 @@
 A full-stack MERN application to manage vehicle fleet bookings based on route, capacity, and availability. Users can add vehicles, search available ones based on time and route, and book or cancel rides.
 
 Setup Instructions : 
-1. git clone https://github.com/your-username/vehicle-booking-app.git
+1. git clone (https://github.com/Asish-2004-ai/vehicle-search)
 cd vehicle-booking-app
 
 2. cd backend
